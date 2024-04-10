@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/5121a7d608.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="/images/PROCAS.png">
+    <link rel="stylesheet" href="/public/css/maestro.css">
+    <script src="maestroController.js"></script>
+    <script src="/views/tu_archivo_js.js"></script>
+    <title>PROCAS</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="/images/PROCAS.png" alt="PROCAS">
+        </div>
+        <div class="usuario-admin">
+            <i class="fas fa-user"></i> Usuario Administrador
+            <p class="cerrar-sesion" id="cerrarSesionButton" onclick="confirmarCerrarSesion()">
+                <i class="fa-solid fa-arrow-right"></i> Cerrar Sesión
+            </p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><button onclick="redirectToDashboard()" class="dashboard-button">DASHBOARD</button></li>
+            
+            <li><button class="maestro-button">MAESTRO CONTRATISTA</button></a></li>
+            <li><button onclick="redirectToMatriz()" class="matriz-button">MATRIZ DE ACTIVIDADES</button></a></li>
+        </ul>
+    </nav>
+
+    <button onclick="redirectToContratista()" class="boton-agregar" id="addRequirementButton">
+        <i class="fas fa-plus"></i> Agregar contratista
+    </button>
+
+    <div class="contenedor">
+        <div class="barra">
+            <div class="botones-barra">
+                MAESTRO CONTRATISTA
+                <select name="status" title="Estado">
+                    <option value="">ESTADO</option>
+                    <option value="">Sin cumplir</option>
+                    <option value="">Vencido</option>
+                    <option value="">Por validar</option>
+                    <option value="">Al dia</option>
+                    
+                </select>
+                <input type="text" name="keyword" placeholder="PALABRA CLAVE">
+
+            </div>
+        </div>
+    </div>
+
+    <table class="tabla" id="miTabla">
+        <caption>Descripción de la tabla de gestión de contratistas</caption>
+        <thead>
+            <tr>
+                <th>Estado</th>
+                <th>CUIT</th>
+                <th>Razón Social</th>
+                <th>Correo Electrónico</th>
+                <th>Teléfono</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="miCuerpoTabla" class="tabla">
+        
+        </tbody>
+    </table>
+
+    <div class="header">
+        GESTIÓN DE CONTRATISTAS
+    </div>
+
+    <script src="/controllers/maestroController.js"></script>
+
+    <script>
+        function redirectToDashboard() {
+            window.location.href = "/dashboard";
+        }
+
+        function redirectToMatriz() {
+            window.location.href = "/matriz";
+        }
+
+        function redirectToContratista() {
+            window.location.href = "/contratista";
+        }
+    </script>
+    
+    
+    <script>
+        function confirmarCerrarSesion() {
+          
+            var confirmacion = confirm("¿Está seguro de cerrar sesión?");
+            
+            
+            if (confirmacion) {
+                window.location.href = "/login";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

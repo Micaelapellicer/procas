@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url(/images/imagen!!.png);
+    
+}
+
+header {
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Añade un borde difuminado */
+   
+}
+
+.logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+.usuario-admin {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.usuario-admin i {
+    margin-right: 20px;
+    font-size: 20px;
+
+}
+
+.cerrar-sesion {
+    cursor: pointer;
+}
+
+nav {
+    background-color: #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav ul li button {
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: white;
+}
+
+.boton-agregar {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px;
+}
+button {
+    padding: 10px 20px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  .dashboard-button {
+    background-color: #78b563; /* Color de fondo inicial para DASHBOARD */
+    color: rgb(253, 251, 251);
+  }
+  
+  .activity-button {
+    background-color: #78b563; /* Color de fondo inicial para ASIGNAR ACTIVIDAD A CONTRATISTA */
+    color: rgb(249, 247, 247);
+  }
+  
+  .maestro-button {
+    background-color: #78b563; /* Color de fondo inicial para MAESTRO CONTRATISTA */
+    color: rgb(255, 254, 254);
+  }
+  
+  .matriz-button {
+    background-color: #78b563; /* Color de fondo inicial para MATRIZ DE ACTIVIDADES */
+    color: rgb(251, 249, 249);
+  }
+  
+  button:hover {
+    filter: brightness(1.2); /* Ajusta el brillo para dar un efecto de cambio de color al pasar el cursor */
+  }
+  
+
+
+.contenedor {
+    width: 90%;
+    max-width: 800px; /* Ajusta según sea necesario */
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.barra {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.botones-barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Ajusta según sea necesario */
+}
+
+.botones-barra select,
+.botones-barra input {
+    padding: 5px;
+    margin: 5px;
+    width: 30%; /* Ajusta según sea necesario */
+}
+
+.tabla {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.tabla th,
+.tabla td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.tabla th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Agrega estilos adicionales según sea necesario */

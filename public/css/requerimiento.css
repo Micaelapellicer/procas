@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #7ec64b;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px;
+    color: white;
+}
+
+.logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+.usuario-admin {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.usuario-admin i {
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+.cerrar-sesion {
+    margin-top: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+nav {
+    background-color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display:inline-block;
+    margin: 0 10px;
+}
+
+nav ul li button {
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: white;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.dashboard-button,
+.activity-button,
+.maestro-button,
+.matriz-button {
+    background-color: #78b563;
+    color: #fff;
+}
+
+button:hover {
+    filter: brightness(1.2);
+}
+
+.form-container {
+    max-width: 100%;
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-header h2 {
+    color: #4CAF50;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input,
+select {
+    margin-top: 5px;
+    padding: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .usuario-admin i {
+        margin-right: 0;
+    }
+
+    nav ul li button {
+        padding: 10px;
+    }
+
+    .form-container {
+        width: 90%;
+    }
+}

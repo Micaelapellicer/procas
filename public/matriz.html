@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/5121a7d608.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="/images/PROCAS.png">
+    <link rel="stylesheet" href="/public/css/matriz.css">
+    <title>PROCAS</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="/images/PROCAS.png" alt="PROCAS">
+        </div>
+        <div class="usuario-admin">
+            <i class="fas fa-user"></i> Usuario Administrador
+            <p class="cerrar-sesion" id="cerrarSesionButton" onclick="confirmarCerrarSesion()">
+                <i class="fa-solid fa-arrow-right"></i> Cerrar Sesión
+            </p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><button onclick="redirectToDashboard()" class="dashboard-button">DASHBOARD</button></li>
+            
+            <li><button onclick="redirectToMaestro()" class="maestro-button">MAESTRO CONTRATISTA</button></li>
+            <li><button class="matriz-button">MATRIZ DE ACTIVIDADES</button></li>
+        </ul>
+    </nav>
+
+    <div class="contenedor">
+        <div class="barra">
+            <div class="botones-barra">
+                <button class="boton-barra" id="btnActividad" onclick="redirectToMatrizBis()">
+                    <i class="fas fa-tasks"></i> Matriz de Actividades
+                </button>
+                <button class="boton-barra" id="btnRequerimientos">
+                    <i class="fas fa-list"></i> Listado de Requerimientos
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <button class="boton-agregar" id="addRequirementButton" onclick="redirectToRequerimiento()">
+        <i class="fas fa-plus"></i> Agregar Requerimientos
+    </button>
+
+    <div id="requirements-container">
+        <table class="tabla" id="requirementsTable">
+            <thead>
+                <tr>
+                    <th>Descripción</th>
+                    <th>Periodicidad</th>
+                    <th>Tipo de Requerimiento</th>
+                    <th>Tipo de Clase</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="requirements-table-body"></tbody>
+        </table>
+    </div>
+
+    <script>
+        function redirectToMaestro() {
+            window.location.href = "maestro.html";
+        }
+
+        function redirectToDashboard() {
+            window.location.href = "dashboard.html";
+        }
+
+        function redirectToRequerimiento() {
+            window.location.href = "requerimiento.html";
+        }
+
+        function redirectToMatrizBis() {
+            window.location.href = "matrizBis.html";
+        }
+
+        // cargar y mostrar los datos almacenados en LocalStorage
+        function loadRequirements() {
+            const savedData = JSON.parse(localStorage.getItem('savedData')) || [];
+
+            const tableBody = document.getElementById('requirements-table-body');
+
+            // Limpiamos el contenido anterior
+            tableBody.innerHTML = '';
+
+            // Iteramos sobre los datos y los agregamos a la tabla
+            savedData.forEach((data, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${data.description}</td>
+                    <td>${data.periodicity}</td>
+                    <td>${data.requirement_type}</td>
+                    <td>${data.class_type}</td>
+                    <td><button onclick="eliminarRequerimiento(${index})">Eliminar</button></td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // eliminar un requerimiento
+        function eliminarRequerimiento(index) {
+            const savedData = JSON.parse(localStorage.getItem('savedData')) || [];
+
+            // Eliminamos el requerimiento en la posición 'index'
+            savedData.splice(index, 1);
+
+            // Guardamos el array actualizado en LocalStorage
+            localStorage.setItem('savedData', JSON.stringify(savedData));
+
+            // Actualizamos la tabla en la interfaz
+            loadRequirements();
+        }
+
+        // Cargamos los datos al cargar la página
+        loadRequirements();
+
+        function confirmarCerrarSesion() {
+            var confirmacion = confirm("¿Está seguro de cerrar sesión?");
+            if (confirmacion) {
+                window.location.href = "/login";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

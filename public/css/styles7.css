@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+   background-color: #c2c2c2;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px;
+    color: white;
+}
+
+.logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+.usuario-admin {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.usuario-admin i {
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+.cerrar-sesion {
+    margin-top: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+main {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+select {
+    height: 36px; /* Ajusta la altura según tus preferencias */
+}
+
+textarea {
+    resize: vertical;
+}
+section {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.desplegables {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el tercer formulario */
+.desplegables, .botones {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+#agregarBtn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+/* Estilos generales para los botones */
+button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Estilos específicos para los botones de cancelar y guardar */
+#cancelarBtn {
+    background-color: #f44336;
+}
+
+#guardarBtn {
+    background-color: #4caf50;
+}

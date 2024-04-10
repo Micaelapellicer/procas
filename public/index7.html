@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/public/css/styles7.css">
+    <title>Formulario de Actividad</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="/images/PROCAS.png" alt="PROCAS">
+        </div>
+        <div class="usuario-admin">
+            <i class="fas fa-user"></i> Usuario Administrador
+            <p class="cerrar-sesion" id="cerrarSesionButton">
+                <i class="fa-solid fa-arrow-right"></i> Cerrar Sesión
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <h1>Formulario de Actividades</h1>
+
+        <!-- Desplegable para seleccionar el contratista -->
+        <label for="contratista">Contratista:</label>
+        <select id="contratista" name="contratista">
+            <option value="contratista1">Contratista 1</option>
+            <option value="contratista2">Contratista 2</option>
+           
+        </select>
+
+        <br>
+
+        <!-- Desplegable para seleccionar la nueva actividad -->
+        <label for="nuevaActividad">Nueva Actividad:</label>
+        <select id="nuevaActividad" name="nuevaActividad">
+            <option value="actividad1">Actividad 1</option>
+            <option value="actividad2">Actividad 2</option>
+          
+        </select>
+        
+        <!-- Campo de instrucciones de la actividad -->
+        <label for="instrucciones">Instrucciones de la Actividad:</label>
+        <textarea id="instrucciones" name="instrucciones" rows="4" cols="50"></textarea>
+
+    </main>
+    <section>
+        <h2>Planificación de la Actividad</h2>
+        <form>
+            <div class="desplegables">
+                <label for="empresa">Empresa:</label>
+                <select id="empresa" name="empresa">
+                    
+                    <option value="empresa1">Empresa 1</option>
+                    <option value="empresa2">Empresa 2</option>
+                   
+                </select>
+
+                <label for="sede">Sede/Planta:</label>
+                <select id="sede" name="sede">
+                   
+                    <option value="sede1">Sede 1</option>
+                    <option value="sede2">Sede 2</option>
+                  
+                </select>
+
+                <label for="zona">Zona o Lugar:</label>
+                <select id="zona" name="zona">
+                    
+                    <option value="zona1">Zona 1</option>
+                    <option value="zona2">Zona 2</option>
+                    <section>
+                        <h2>Planificación de la Actividad</h2>
+                        <form>
+                            <h3>¿Para cuando está programada la ejecución de la actividad?</h3>
+                            <label for="fechaInicio">Fecha de Inicio:</label>
+                            <input type="date" id="fechaInicio" name="fechaInicio">
+
+                            <label for="fechaFin">Fecha de Fin:</label>
+                            <input type="date" id="fechaFin" name="fechaFin">
+                        </form>
+                    </section>
+
+                </select>
+            </div>
+
+        </form>
+    </section>
+    <section>
+        <button id="agregarBtn">Agregar +</button>
+
+        <div class="desplegables">
+            <label for="fechaRealizado">Fecha:</label>
+            <input type="date" id="fechaRealizado" name="fechaRealizado">
+
+            <label for="realizadoPor">Realizado por:</label>
+            <input type="text" id="realizadoPor" name="realizadoPor">
+
+            <label for="observacion">Observación:</label>
+            <textarea id="observacion" name="observacion"></textarea>
+        </div>
+
+        <div class="botones">
+            <button id="cancelarBtn">Cancelar</button>
+            <button id="guardarBtn">Guardar</button>
+        </div>
+    </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

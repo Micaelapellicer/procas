@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: url(/images/imagen!!.png);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px;
+    color: white;
+}
+
+.logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+.usuario-admin {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.usuario-admin i {
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+.cerrar-sesion {
+    margin-top: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+nav {
+    background-color: #ffffff; /* Tonos verdes */
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav ul li button {
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: white; /* Texto en blanco */
+}
+button {
+    padding: 10px 20px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  .dashboard-button {
+    background-color: #78b563; /* Color de fondo inicial para DASHBOARD */
+    color: rgb(253, 251, 251);
+  }
+  
+  .activity-button {
+    background-color: #78b563; /* Color de fondo inicial para ASIGNAR ACTIVIDAD A CONTRATISTA */
+    color: rgb(249, 247, 247);
+  }
+  
+  .maestro-button {
+    background-color: #78b563; /* Color de fondo inicial para MAESTRO CONTRATISTA */
+    color: rgb(255, 254, 254);
+  }
+  
+  .matriz-button {
+    background-color: #78b563; /* Color de fondo inicial para MATRIZ DE ACTIVIDADES */
+    color: rgb(251, 249, 249);
+  }
+  
+  button:hover {
+    filter: brightness(1.2); /* Ajusta el brillo para dar un efecto de cambio de color al pasar el cursor */
+  }
+
+.contenedor {
+    background-color: #3b5b3b;
+}
+
+.botones-barra {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.boton-barra {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+.boton-agregar {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px;
+    display: block;
+    width: 100%;
+}
+
+.tabla {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.tabla th, .tabla td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.tabla th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Media query para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .usuario-admin i {
+        margin-right: 0;
+    }
+
+    .botones-barra {
+        flex-direction: column;
+    }
+
+    .boton-barra {
+        margin-bottom: 10px;
+    }
+
+    .tabla th, .tabla td {
+        font-size: 12px;
+    }
+}

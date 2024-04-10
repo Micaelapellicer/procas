@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #7ec64b
+    
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px;
+    color: white;
+}
+
+.logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+.usuario-admin {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.usuario-admin i {
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+.cerrar-sesion {
+    margin-top: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+nav {
+    background-color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display:inline-block;
+    margin: 0 10px;
+}
+
+nav ul li button {
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: white;
+}
+button {
+    padding: 10px 20px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  .dashboard-button {
+    background-color: #78b563; /* Color de fondo inicial para DASHBOARD */
+    color: rgb(253, 251, 251);
+  }
+  
+  .activity-button {
+    background-color: #78b563; /* Color de fondo inicial para ASIGNAR ACTIVIDAD A CONTRATISTA */
+    color: rgb(249, 247, 247);
+  }
+  
+  .maestro-button {
+    background-color: #78b563; /* Color de fondo inicial para MAESTRO CONTRATISTA */
+    color: rgb(255, 254, 254);
+  }
+  
+  .matriz-button {
+    background-color: #78b563; /* Color de fondo inicial para MATRIZ DE ACTIVIDADES */
+    color: rgb(251, 249, 249);
+  }
+  
+  button:hover {
+    filter: brightness(1.2); /* Ajusta el brillo para dar un efecto de cambio de color al pasar el cursor */
+  }
+  
+
+
+.form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    color: #4CAF50;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input,
+select,
+textarea {
+    margin-top: 5px;
+    padding: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .usuario-admin i {
+        margin-right: 0;
+    }
+
+    nav ul li button {
+        padding: 10px;
+    }
+
+    .form-container {
+        max-width: 100%;
+    }
+}

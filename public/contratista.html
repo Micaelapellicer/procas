@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/5121a7d608.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="/images/PROCAS.png">
+    <link rel="stylesheet" href="/public/css/contratista.css">
+    <title>PROCAS</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="/images/PROCAS.png" alt="PROCAS">
+        </div>
+        <div class="usuario-admin">
+            <i class="fas fa-user"></i> Usuario Administrador
+            <p class="cerrar-sesion" id="cerrarSesionButton" onclick="confirmarCerrarSesion()"> <br>
+                <i class="fa-solid fa-arrow-right"></i> Cerrar Sesión
+            </p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><button onclick="redirectToDashboard()" class="dashboard-button">DASHBOARD</button></li>
+            <li><button onclick="redirectToMaestro()" class="maestro-button">MAESTRO CONTRATISTA</button></li>
+            <li><button onclick="redirectToMatriz()" class="matriz-button">MATRIZ DE ACTIVIDADES</button></a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <div class="container">
+            <form id="contratistaForm" onsubmit="return validarFormulario()">
+                <h2>REGISTRO NUEVO CONTRATISTA</h2>
+                <label for="numero_de_CUIT">Número de CUIT:</label><br>
+                <input type="text" id="numero_de_CUIT" name="numero_de_CUIT" required><br>
+                <label for="nombre_razon_social">Nombre o Razón Social:</label><br>
+                <input type="text" id="nombre_razon_social" name="nombre_razon_social" required><br>
+                <label for="correo_electronico">Correo Electrónico:</label><br>
+                <input type="email" id="correo_electronico" name="correo_electronico" required><br>
+                <label for="direccion">Dirección:</label><br>
+                <input type="text" id="direccion" name="direccion" required><br>
+                <label for="telefono">Teléfono:</label><br>
+                <input type="tel" id="telefono" name="telefono" required><br>
+                <label for="Provincia">Provincia:</label><br>
+                <input type="text" id="Provincia" name="Provincia" required><br>
+                <label for="ciudad">Ciudad:</label><br>
+                <input type="text" id="ciudad" name="ciudad" required><br>
+                <label for="logo_contratista">Logotipo del Contratista:</label><br>
+                <input type="file" id="logo_contratista" name="logo_contratista" accept="image/png" required><br>
+                <p>Instrucciones: El logotipo debe estar en fondo blanco, formato png y tamaño 500px x 500px</p>
+                <button type="submit">Registrar</button>
+            </form>   
+        </div>
+    </section>
+
+    <h1>Usuarios de Contacto</h1>
+    <form class="add-user-form" id="addUserForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono">
+
+        <button type="button" onclick="agregarUsuario()">Agregar Usuario</button>
+    </form>
+    <table aria-describedby="tableDescription" id="userTable">
+        <caption id="tableDescription">Usuarios de Contacto</caption>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Correo Electrónico</th>
+                <th>Teléfono</th>
+            </tr>
+        </thead>
+        <tbody>
+         
+        </tbody>
+    </table>
+
+    <form id="registrationForm">
+    
+        <div style="text-align: right;">
+            <input type="submit" value="Registrar">
+        </div>
+    </form>
+
+    <script>
+        function confirmarCerrarSesion() {
+            var confirmacion = confirm("¿Está seguro de cerrar sesión?");
+            
+            if (confirmacion) {
+                window.location.href = "/login";
+            }
+        }
+
+        function agregarUsuario() {
+            // Obtener datos del formulario de usuario
+            var nombre = document.getElementById("nombre").value;
+            var email = document.getElementById("email").value;
+            var telefono = document.getElementById("telefono").value;
+
+            // Crear una nueva fila en la tabla
+            var table = document.getElementById("userTable").getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow(table.rows.length);
+
+            // Insertar celdas con los datos del usuario
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+
+            cell1.innerHTML = nombre;
+            cell2.innerHTML = email;
+            cell3.innerHTML = telefono;
+        }
+
+        function redirectToMaestro() {
+            window.location.href = "maestro.html";
+        }
+
+        function redirectToDashboard() {
+            window.location.href = "dashboard.html";
+        }
+        
+        function validarFormulario() {
+            var campos = document.getElementById("contratistaForm").elements;
+            for (var i = 0; i < campos.length; i++) {
+                if (campos[i].hasAttribute("required") && campos[i].value === "") {
+                    alert("Por favor, complete todos los campos.");
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+</body>
+
+</html>
